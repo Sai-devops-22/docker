@@ -1,2 +1,0 @@
-FROM run:v1
-EXPOSE 
