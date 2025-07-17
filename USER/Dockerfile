@@ -4,4 +4,4 @@ RUN useradd siva
 
 USER siva
 CMD ["google.com"]
-ENTRYPOINT["ping"]
+ENTRYPOINT ["ping"]
