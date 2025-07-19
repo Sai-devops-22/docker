@@ -7,8 +7,6 @@ services:
   mongodb:
     image: saidoc11/mongodb:v1
     container_name: mongodb
-    volumes:
-    - mongodb:/data/db
   catalogue:
     image: saidoc11/catalogue:v1
     container_name: catalogue
@@ -44,5 +42,3 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: roboshop
       RABBITMQ_DEFAULT_PASS: roboshop123
-    volumes:
-    - rabbitmq:/var/lib/rabbitmq
