@@ -32,8 +32,6 @@ services:
   mysql:
     image: saidoc11/mysql:v1
     container_name: mysql
-    volumes:
-    - mysql:/var/lib/mysql
   shipping:
     image: saidoc11/shipping:v1
     container_name: shipping
