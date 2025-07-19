@@ -17,8 +17,6 @@ services:
   redis:
     image: redis:7.0
     container_name: redis
-    volumes:
-    - redis:/data
   user:
     image: saidoc11/user:v1
     container_name: user
@@ -42,3 +40,11 @@ services:
     depends_on:
     - mysql
     - cart
+  rabbitmq:
+    image: rabbitmq:3
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: roboshop
+      RABBITMQ_DEFAULT_PASS: roboshop123
+    volumes:
+    - rabbitmq:/var/lib/rabbitmq
