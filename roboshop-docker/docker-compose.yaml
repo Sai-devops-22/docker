@@ -26,26 +26,14 @@ services:
     container_name: redis
     volumes:
     - redis:/data
-  # user:
-  #   image: saidoc11/user:v1
-  #   container_name: user
-  #   depends_on:
-  #   - redis
-  #   - mongodb
-  # cart:
-  #   image: saidoc11/cart:v1
-  #   container_name: cart
-  #   depends_on:
-  #   - catalogue
-  #   - redis
   user:
-    image: joindevops/user:v1
+    image: saidoc11/user:v1
     container_name: user
     depends_on:
     - redis
     - mongodb
   cart:
-    image: joindevops/cart:v1
+    image: saidoc11/cart:v1
     container_name: cart
     depends_on:
     - catalogue
@@ -61,7 +49,7 @@ services:
     depends_on:
     - mysql
     - cart
-  rabbitmq:
+   rabbitmq:
     image: rabbitmq:3
     container_name: rabbitmq
     environment:
