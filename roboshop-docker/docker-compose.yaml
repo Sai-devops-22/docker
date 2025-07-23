@@ -26,14 +26,26 @@ services:
     container_name: redis
     volumes:
     - redis:/data
+  # user:
+  #   image: saidoc11/user:v1
+  #   container_name: user
+  #   depends_on:
+  #   - redis
+  #   - mongodb
+  # cart:
+  #   image: saidoc11/cart:v1
+  #   container_name: cart
+  #   depends_on:
+  #   - catalogue
+  #   - redis
   user:
-    image: saidoc11/user:v1
+    image: joindevops/user:v1
     container_name: user
     depends_on:
     - redis
     - mongodb
   cart:
-    image: saidoc11/cart:v1
+    image: joindevops/cart:v1
     container_name: cart
     depends_on:
     - catalogue
@@ -49,14 +61,6 @@ services:
     depends_on:
     - mysql
     - cart
-  # rabbitmq:
-  #   image: rabbitmq:3
-  #   container_name: rabbitmq
-  #   environment:
-  #     RABBITMQ_DEFAULT_USER: roboshop
-  #     RABBITMQ_DEFAULT_PASS: roboshop123
-  #   volumes:
-  #   - rabbitmq:var/lib/rabbitmq
   rabbitmq:
     image: rabbitmq:3
     container_name: rabbitmq
