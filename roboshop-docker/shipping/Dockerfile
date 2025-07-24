@@ -16,7 +16,7 @@ COPY pom.xml .
 COPY src /opt/server
 
 FROM maven
-RUN adduser -S roboshop && addgroup -S roboshop -G roboshop 
+RUN addgroup -S roboshop && adduser -S roboshop -G roboshop 
 WORKDIR /opt/server
 RUN chown -R roboshop:roboshop /opt/server
 RUN mv target/shipping-1.0.jar /opt/server 
