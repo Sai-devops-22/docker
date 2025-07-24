@@ -57,19 +57,36 @@ services:
       RABBITMQ_DEFAULT_PASS: roboshop123
     volumes:
     - rabbitmq:/var/lib/rabbitmq
+  # payment:
+  #   image: saidoc11/payment:v1
+  #   container_name: payment
+  #   environment:
+  #     CART_HOST: cart 
+  #     CART_PORT: 8080
+  #     USER_HOST: user
+  #     USER_PORT: 8080
+  #     AMQP_HOST: rabbitmq
+  #   depends_on:
+  #   - rabbitmq
+  #   - user
+  #   - cart
+
   payment:
-    image: saidoc11/payment:v1
+    image: joindevops/payment:v1
     container_name: payment
     environment:
-      CART_HOST: cart 
+      CART_HOST: cart
       CART_PORT: 8080
       USER_HOST: user
       USER_PORT: 8080
       AMQP_HOST: rabbitmq
+      AMQP_USER: roboshop
+      AMQP_PASS: roboshop123
     depends_on:
     - rabbitmq
-    - user
     - cart
+    - user
+
   frontend:
     image: saidoc11/frontend:v1
     container_name: frontend
