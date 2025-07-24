@@ -5,7 +5,7 @@ COPY *.js .
 RUN npm install
 
 FROM node:alpine3.21 
-RUN useradd -S roboshop && username -S roboshop -G roboshop
+RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 WORKDIR /opt/server
 RUN chown -R roboshop:roboshop /opt/server
 ENV REDIS_HOST="redis" \
