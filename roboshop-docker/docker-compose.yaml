@@ -72,7 +72,7 @@ services:
   #   - cart
 
   payment:
-    image: joindevops/payment:v1
+    image: saidoc11/payment:v1
     container_name: payment
     environment:
       CART_HOST: cart
