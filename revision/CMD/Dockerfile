@@ -1,2 +1,2 @@
-From from:v1
-CMD ["nginx" "-g" "daemon off;"]
+FROM from:v1
+CMD ["nginx","-g","daemon off;"]
