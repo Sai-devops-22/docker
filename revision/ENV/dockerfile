@@ -1,4 +1,4 @@
 FROM from:v1
-ENV COURSE: "DEVSECOPS" / 
+ENV COURSE: "DEVSECOPS" \
     TRAINER: "SIVA"
 CMD ["sleep","1000"]
