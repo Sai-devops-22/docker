@@ -1,6 +1,7 @@
 ARG version
 FROM almalinux:${version:-9}
-ENV COURSE ="DEVSECOPS" \
+ENV course ="DEVSECOPS" \
     trainer ="siva"
 RUN echo "the ${course} course will guid by ${trainer}"
 CMD ["sleep", "1000"]
+
