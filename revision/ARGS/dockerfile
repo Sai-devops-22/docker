@@ -1,9 +1,9 @@
 ARG version
 FROM almalinux:${version:-9}
-ENV course = "DEVSECOPS" \
-    trainer = "siva"
-ARG hrs = "120"
-ENV hrs = $hrs
+ENV course="DEVSECOPS" \
+    trainer="siva"
+ARG hrs="120"
+ENV hrs=$hrs
 RUN echo "the course: ${course}, course will guid by: ${trainer} and duration: ${hrs}"
 CMD ["sleep", "1000"]
 
