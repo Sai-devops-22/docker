@@ -7,3 +7,4 @@ ENV hrs=$hrs
 RUN echo "the course: ${course}, course will guid by: ${trainer} and duration: ${hrs}"
 CMD ["sleep", "1000"]
 
+
