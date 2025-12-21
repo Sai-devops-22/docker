@@ -1,7 +1,7 @@
-FROM node:alpine3.21
+FROM node:20
 WORKDIR /opt/server
-COPY *.json /opt/server
 COPY package.json /opt/server
+COPY *.json /opt/server
 RUN npm install
 ENV MONGO="true" \
     MONGO_URL="mongodb://mongo:27017/catalogue"
