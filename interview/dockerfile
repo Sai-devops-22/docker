@@ -12,3 +12,4 @@ FROM almalinux:9.0
 ENV course="DevSecOps"
 ARG trainer="siva"
 RUN echo "course:${course} and trainer:${trainer}"
+CMD [ "sleep", "1000" ] 
