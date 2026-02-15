@@ -4,6 +4,11 @@
 # COPY index.html /usr/share/nginx/html/
 # CMD ["nginx", "-g", "daemon off;"]
 
+# FROM almalinux:9.0
+# #CMD ["ping", "google.com"]
+# ENTRYPOINT ["ping", "google.com"]
+
 FROM almalinux:9.0
-#CMD ["ping", "google.com"]
-ENTRYPOINT ["ping", "google.com"]
+ENV course="DevSecOps"
+ARG trainer="siva"
+RUN echo "course:${course} and trainer:${trainer}"
