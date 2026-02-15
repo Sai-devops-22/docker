@@ -5,4 +5,4 @@
 # CMD ["nginx", "-g", "daemon off;"]
 
 FROM almalinux:9.0
-CMD["ping","google.com"]
+CMD["ping", "google.com"]
